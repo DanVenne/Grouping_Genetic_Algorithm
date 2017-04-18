@@ -82,18 +82,6 @@ class GeneticAlgorithm {
      */
     public void evolve() {
 
-        /** Evolve until termination criteria is met
-         * Hybrid Criteria from Michael Mutingi, Charles Mbohwa, Grouping Genetic Algorithms: Advances and Applications
-         *  Input: itCount, itWithoutImp, maxItCount, ?, ?
-         *  Terminate = false //initialize terminate;
-         *  Compute ? = f (current conditions) //adjust parameters ?, ? ;
-         *  Compute ? = f (current conditions);
-         *  If (itCount ? ?·maxItCount & itWithoutImp ??·maxItWithoutImp) Then
-         *   terminate = true;
-         *  return terminate
-         * */
-
-
         boolean terminate =false;
         while (!terminate) {
 
