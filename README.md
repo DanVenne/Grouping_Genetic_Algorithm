@@ -11,9 +11,11 @@ The general Grouping Genetic Algorithm proposed by Falkenauer [1] is comprised o
   6.	Replace the new population that has been created by three former steps. 
 
 Selection
+
 A tournament selection is used to pick suitable candidate solutions.  A tournament size is chosen, and candidate solutions are chosen at random from the list of all populations in the epoch.  From the chosen candidate solutions, the solution with the highest fitness (total GH) is selected as the winner of the tournament and is added as a parent for the particular breeding iteration.  Tournament selection is used twice to select two parents.
 
 Crossover
+
 The crossover algorithm proposed by Falkenauer [1] is:
   1.	Select parents and random crossover points
   2.	Genes belonging to the selected group are copied from the first parent to child.
@@ -24,7 +26,8 @@ The crossover algorithm proposed by Falkenauer [1] is:
 
 The algorithm is modified such that constraints on group formation can be added.
 
-Mutation 
+Mutation
+
 The mutation algorithm is a blend of split and swap mutation algorithms.
 The implemented algorithm is:
   1.	If population is chosen for mutation
@@ -37,12 +40,15 @@ The implemented algorithm is:
 This algorithm does a better approximation of maximizing heterogeneity of the newly formed groups than random shuffling does.
 
 Inversion
+
 The inversion algorithm simply randomly selects two groups in a chromosome and swaps them.
 
 Evaluation
+
 Upon creation of a new group, the minimum Euclidean distance between members, AD, and GH are measured.  Upon each addition of a population to an epoch, total GH is calculated as the sum of all group GH values.  Each epoch the candidate solution with the highest total GH is added with the epoch number to a list for future retrieval.
 
 Termination Condition
+
 The algorithm uses a multi-stage termination condition:
   1.	First, it ensures at least 2 epochs have passed.
   2.	Next, regardless of how many iterations have passed, the algorithm is not satisfied until the problem constraints are met
